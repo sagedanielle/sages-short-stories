@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params; // unwrap the promise
 
-  const categoryImage = assetPath(`/images/${category}.jpg`); // dynamically picks the image based on category
+  const categoryImage = assetPath(`/images/${category.toLowerCase()}.jpg`); // dynamically picks the image based on category
 
   const stories = getStoriesByCategory(category);
 
