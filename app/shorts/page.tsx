@@ -52,7 +52,7 @@ export default async function ShortsPage() {
                 <div className="short-image">
                   {entry.image && (
                     <img
-                      src={entry.image}
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${entry.image}`}
                       alt={entry.location ?? "Short journal image"}
                       className="rounded-image"
                     />

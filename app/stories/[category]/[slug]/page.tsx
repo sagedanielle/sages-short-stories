@@ -46,7 +46,7 @@ export default async function StoryPage({ params }: Props) {
       {story.image && (
         <div className="image-wrapper mb-4">
           <img
-            src={story.image}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${story.image}`}
             alt={story.title}
             className="rounded-image"
           />
