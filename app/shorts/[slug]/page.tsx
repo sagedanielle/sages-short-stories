@@ -1,4 +1,5 @@
 // app/shorts/[slug]/page.tsx
+import { assetPath } from "@/lib/assetPath";
 import Link from "next/link";
 import { getShorts, getShortBySlug } from "@/lib/shorts";
 
@@ -32,7 +33,7 @@ export default async function ShortsPage({ params }: Props) {
       {entry.image && (
         <div className="image-wrapper mt-8">
           <img
-            src={entry.image}
+            src={assetPath(entry.image)}
             alt=""
             className="rounded-image"
           />

@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/assetPath";
 import { getShorts, getShortBySlug } from "@/lib/shorts";
 import Link from "next/link";
 
@@ -52,7 +53,7 @@ export default async function ShortsPage() {
                 <div className="short-image">
                   {entry.image && (
                     <img
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${entry.image}`}
+                      src={assetPath(entry.image)}
                       alt={entry.location ?? "Short journal image"}
                       className="rounded-image"
                     />

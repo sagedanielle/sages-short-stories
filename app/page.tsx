@@ -1,4 +1,5 @@
 // app/page.tsx
+import { assetPath } from "@/lib/assetPath";
 import Link from "next/link";
 import { getCategories } from "../lib/stories";
 import { getShorts } from "@/lib/shorts";
@@ -16,7 +17,7 @@ export default function HomePage() {
 
         <div className="image-wrapper mb-8">
           <img
-            src="/windmill.jpeg"
+            src={assetPath("/windmill.jpeg")}
             alt="Windmill"
             className="rounded-image"
           />

@@ -1,4 +1,5 @@
 // app/stories/[category]/[slug]/page.tsx
+import { assetPath } from "@/lib/assetPath";
 import Link from "next/link";
 import { getCategories, getStoriesByCategory, getStory } from "@/lib/stories";
 
@@ -46,7 +47,7 @@ export default async function StoryPage({ params }: Props) {
       {story.image && (
         <div className="image-wrapper mb-4">
           <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${story.image}`}
+            src={assetPath(story.image)}
             alt={story.title}
             className="rounded-image"
           />

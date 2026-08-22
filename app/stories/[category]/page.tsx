@@ -1,4 +1,5 @@
 // app/stories/[category]/page.tsx
+import { assetPath } from "@/lib/assetPath";
 import Link from "next/link";
 import { getStoriesByCategory, getCategories } from "@/lib/stories";
 
@@ -14,7 +15,7 @@ export async function generateStaticParams() {
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params; // unwrap the promise
 
-  const categoryImage = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/${category}.jpg`;
+  const categoryImage = assetPath(`/images/${category}.jpg`); // dynamically picks the image based on category
 
   const stories = getStoriesByCategory(category);
 
